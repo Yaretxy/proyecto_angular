@@ -8,9 +8,15 @@ import { Mascotas } from '../mascotas';
 })
 export class AgregarMascotasComponent implements OnInit {
   mascotas: Mascotas={
-    id: 0,
-    nombre: '',
-    edad: 0
+    id:0,
+    nombre:'',
+    edad:'',
+    raza:'',
+    color:'',
+    sexo:'',
+    estado:'',
+    id_vacunas:0,
+    imagen:'',
   };
 
   constructor(private mascota:MascotasService) { }
@@ -19,6 +25,9 @@ export class AgregarMascotasComponent implements OnInit {
   ngOnInit(): void {
   }
   addMascotas(){
-    this.mascota.addMascotas(this.mascotas);
+    this.mascota.addMascotas(this.mascotas).subscribe(
+      res =>{console.log(res);},
+      err =>{console.error(err);}
+    );
   }
 }

@@ -11,23 +11,31 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class MascotasComponent implements OnInit {
   
-  dataSource!: MatTableDataSource<Mascotas>;
+  //dataSource!: MatTableDataSource<Mascotas>;
   mascota!:Mascotas[];
-  markers:any[] = [];
+  //markers:any[] = [];
   constructor(private mascotasService: MascotasService) {
-    this.mascotasService.getMascotas().subscribe((mascota: Mascotas[] | undefined) => {
-      this.dataSource= new MatTableDataSource(mascota);
-    });
+   // this.mascotasService.getMascotas().subscribe((mascota: Mascotas[] | undefined) => {
+    //  this.dataSource= new MatTableDataSource(mascota);
+  //  });
   }
-  displayedColumns: string[] = ['nombre', 'id','edad'];
-  ngOnInit(): void {}
+ // displayedColumns: string[] = ['nombre', 'id','edad'];
+  ngOnInit(): void {
+    this.mascotasService.getMascotas().subscribe(res=>{
+      this.mascota=res;
+    },
+     err => console.log(err)
+    );
+      
+    }
+  }
 
-  getMascotas(): void {
-    this.mascotasService.getMascotas().subscribe((mascota: Mascotas[]) => {this.mascota=mascota;
-this.mascota.forEach(element => {
-  this.markers.push({
+  //getMascotas(): void {
+  //  this.mascotasService.getMascotas().subscribe((mascota: Mascotas[]) => {this.mascota=mascota;
+//this.mascota.forEach(element => {
+ // this.markers.push({
     
-    label: {
+  /*  label: {
       color: 'red',
       text: element.nombre,
     },
@@ -40,7 +48,7 @@ this.mascota.forEach(element => {
     });
     console.log(this.mascota);
 
-  }
+  }*/
 
 
-}
+

@@ -1,4 +1,4 @@
-<mat-table [dataSource]="dataSource" mat-sort>
+<!--<mat-table [dataSource]="dataSource" mat-sort>
   <ng-container matColumnDef="Accion"  >
     <mat-header-cell *matHeaderCellDef > Action </mat-header-cell>
     <mat-cell *matCellDef="let element" >
@@ -15,10 +15,32 @@
     <mat-cell *matCellDef="let taque"> {{taque.id}} </mat-cell>
   </ng-container>
   <ng-container matColumnDef="edad">
-    <mat-header-cell *matHeaderCellDef> Calidad </mat-header-cell>
-    <mat-cell *matCellDef="let taque"> {{taque.edad}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef> imagen </mat-header-cell>
+    <mat-cell *matCellDef="let taque"> {{taque.imagen}} </mat-cell>
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
-</mat-table>
+</mat-table>-->
+
+
+<section class="contenedor">
+  <div *ngFor="let mascotas of mascota" class="card-header d-flex justify-content- between aling-items-center" style="width: 15rem;">
+    <div class="row">
+      <div class="col">
+        <img
+          src="assets/imagenes/git.png"
+          class="card-img-top"
+          alt="..."/>
+        <h1><b>{{mascotas.nombre}}</b></h1>
+        <ul class="card-text">
+          <li>Edad:{{mascotas.edad}}</li>
+          <li>Raza:{{mascotas.raza}}</li>
+          <li>Sexo:{{mascotas.sexo}}</li>
+          <li>{{mascotas.id_vacunas}}</li>
+      </ul>
+      <button type="button" class="btn btn-primary">Adoptar</button>
+    </div>
+  </div>
+  </div>
+</section><br><br><br>

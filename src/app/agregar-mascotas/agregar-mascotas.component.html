@@ -35,25 +35,49 @@
     <h1>Registrar</h1>
        <mat-form-field appearance="fill">
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Nombre">
-      </mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="mascotas.nombre">
+        </mat-form-field>
     </div>
+
+    <div>
+        <mat-form-field appearance="legacy">
+        <mat-label>edad</mat-label>
+        <input matInput placeholder="Apellido Paterno" [(ngModel)]="mascotas.edad" >
+        </mat-form-field>
+    </div>
+
     <div>
       <mat-form-field appearance="legacy">
-        <mat-label>Mat Label Example</mat-label>
-        <input matInput placeholder="Apellido Paterno">
-  
+        <mat-label>raza</mat-label>
+        <input matInput placeholder=""  [(ngModel)]="mascotas.raza">
       </mat-form-field>
     </div>
-    <div>
+
       <mat-form-field appearance="legacy">
-        <mat-label>Mat Label Example</mat-label>
-        <input matInput placeholder="Apellido Materno">
+        <mat-label>color</mat-label>
+        <input matInput placeholder=""  [(ngModel)]="mascotas.color">
       </mat-form-field>
-    </div>
+
       <mat-form-field appearance="legacy">
-        <mat-label>Mat Label Example</mat-label>
-        <input matInput placeholder="Contraseña">
+        <mat-label>sexo</mat-label>
+        <input matInput placeholder=""  [(ngModel)]="mascotas.sexo">
       </mat-form-field>
-    <button mat-button>Registrarse</button>
-    </div>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>estado</mat-label>
+        <input matInput placeholder=""  [(ngModel)]="mascotas.estado">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>idvacunas</mat-label>
+        <input matInput type="number"  [(ngModel)]="mascotas.id_vacunas">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>imagen</mat-label>
+        <input type="url" matInput [(ngModel)]="mascotas.imagen">
+      </mat-form-field>
+      <button mat-button (click)="addMascotas()">Registrarse</button>
+  </div>
+
+   

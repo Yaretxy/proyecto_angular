@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { MascotasService } from '../mascotas.service';
 import { Mascotas } from '../mascotas';
 @Component({
@@ -19,7 +19,7 @@ export class AgregarMascotasComponent implements OnInit {
     imagen:'',
   };
 
-  constructor(private mascota:MascotasService) { }
+  constructor(private mascota:MascotasService, private modalService:NgModule) { }
   public cargando=false;
 
   ngOnInit(): void {

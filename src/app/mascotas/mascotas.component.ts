@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import {Mascotas} from '../mascotas';
 import { MascotasService } from '../mascotas.service';
 import { Router } from '@angular/router';
 import {MatTableDataSource} from '@angular/material/table';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-mascotas',
@@ -28,27 +29,12 @@ export class MascotasComponent implements OnInit {
     );
       
     }
+
+    adoptar(){
+     
+    }
   }
 
-  //getMascotas(): void {
-  //  this.mascotasService.getMascotas().subscribe((mascota: Mascotas[]) => {this.mascota=mascota;
-//this.mascota.forEach(element => {
- // this.markers.push({
-    
-  /*  label: {
-      color: 'red',
-      text: element.nombre,
-    },
-    info: element.nombre,
-    title: element.nombre,
-  })
-});
-
-
-    });
-    console.log(this.mascota);
-
-  }*/
 
 
 

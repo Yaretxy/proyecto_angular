@@ -20,6 +20,7 @@ getMascotas(): Observable<Mascotas[]> {
     catchError(this.handleError<Mascotas[]>('getMascotas', []))
   );
 }
+
 private log(message: string) {
   this.messageService.add(`TaqueriasService: ${message}`);
 }
@@ -34,9 +35,24 @@ private handleError<T>(operation = 'operation', result?: T) {
 //AGREGAR Mascotas
 addMascotas(mascota: Mascotas): Observable<Mascotas> {
   return this.http.post<Mascotas>(this.mascotas, mascota, this.httpOptions).pipe(
-    tap((newMascotas: Mascotas) => this.log(`added mascotas w/ id=${newMascotas.id}`)),
+    tap((newMascotas: Mascotas) => this.log(`added mascotas w/ id_animal=${newMascotas.id_animal}`)),
     catchError(this.handleError<Mascotas>('addMascota'))
   );
+}
+
+deleteMascota(id:number):Observable<any>{
+  const url = `${this.mascotas}/${id}`;
+  return this.http.delete<any>(url).pipe(
+    tap(_ => this.log(`Eliminado animal con ID ${id}`)),
+    catchError(this.handleError<any>(`deleteAnimal ID ${id}`))
+  );
+}
+
+updateMascota(id:number, animal:Mascotas): Observable<any>{
+  const url = `${this.mascotas}/${id}`;
+  return this.http.put(url, animal, this.httpOptions).pipe(
+    tap(_ => this.log(`updated hero id=${id}`)),
+    catchError(this.handleError<any>('updateMascota')));
 }
 /*OBTENER TAQUERIAS POR ID
 getTaqueria(id: number):Observable<Taquerias>{

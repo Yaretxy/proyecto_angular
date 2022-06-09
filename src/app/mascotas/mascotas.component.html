@@ -1,35 +1,13 @@
-<!--<mat-table [dataSource]="dataSource" mat-sort>
-  <ng-container matColumnDef="Accion"  >
-    <mat-header-cell *matHeaderCellDef > Action </mat-header-cell>
-    <mat-cell *matCellDef="let element" >
-     
-      
-    </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="nombre">
-    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-    <mat-cell *matCellDef="let taque"> {{taque.nombre}} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
-    <mat-cell *matCellDef="let taque"> {{taque.id}} </mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="edad">
-    <mat-header-cell *matHeaderCellDef> imagen </mat-header-cell>
-    <mat-cell *matCellDef="let taque"> {{taque.imagen}} </mat-cell>
-  </ng-container>
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-</mat-table>-->
 
 
-<section class="contenedor">
+
+<section class="contenedor d-flex">
+  <div class="row">
   <div *ngFor="let mascotas of mascota" class="card-header d-flex justify-content- between aling-items-center" style="width: 15rem;">
     <div class="row">
       <div class="col">
         <img
-          src="assets/imagenes/git.png"
+          src="assets/imagenes/cat.jpg"
           class="card-img-top"
           alt="..."/>
         <h1><b>{{mascotas.nombre}}</b></h1>
@@ -38,8 +16,9 @@
           <li>Raza:{{mascotas.raza}}</li>
           <li>Sexo:{{mascotas.sexo}}</li>
       </ul>
-      <button type="button" (click)="adoptar()" class="btn btn-primary">Adoptar</button>
+      <button type="button" [routerLink]="['/adopcion']" (click)="savePersona(mascotas.id_animal)"  class="btn btn-primary">Adoptar</button>
     </div>
+  </div>
   </div>
   </div>
 </section><br><br><br>

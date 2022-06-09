@@ -42,7 +42,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import { AgregarMascotasComponent } from './agregar-mascotas/agregar-mascotas.component';
 import { LoaddingButtonComponent } from './loadding-button/loadding-button.component';
-import { ModalComponent } from './modal/modal.component'
+import { ModalComponent } from './modal/modal.component';
+import { TablaComponent } from './tabla/tabla.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ModalComponent } from './modal/modal.component'
     MascotasComponent,
     AgregarMascotasComponent,
     LoaddingButtonComponent,
-    ModalComponent
+    ModalComponent,
+    TablaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

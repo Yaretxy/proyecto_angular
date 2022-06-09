@@ -8,7 +8,7 @@ import { Mascotas } from '../mascotas';
 })
 export class AgregarMascotasComponent implements OnInit {
   mascotas: Mascotas={
-    id:0,
+    id_animal:0,
     nombre:'',
     edad:'',
     raza:'',
@@ -19,7 +19,7 @@ export class AgregarMascotasComponent implements OnInit {
     imagen:'',
   };
 
-  constructor(private mascota:MascotasService, private modalService:NgModule) { }
+  constructor(private mascota:MascotasService) { }
   public cargando=false;
 
   ngOnInit(): void {

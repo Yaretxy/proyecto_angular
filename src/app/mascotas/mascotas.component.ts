@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, HostBinding, NgModule, OnInit } from '@angular/core';
 import {Mascotas} from '../mascotas';
 import { MascotasService } from '../mascotas.service';
 import { Router } from '@angular/router';
@@ -11,26 +11,23 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./mascotas.component.css']
 })
 export class MascotasComponent implements OnInit {
-  
-  //dataSource!: MatTableDataSource<Mascotas>;
+@HostBinding('class') classes='row';
   mascota!:Mascotas[];
-  //markers:any[] = [];
   constructor(private mascotasService: MascotasService) {
-   // this.mascotasService.getMascotas().subscribe((mascota: Mascotas[] | undefined) => {
-    //  this.dataSource= new MatTableDataSource(mascota);
-  //  });
   }
- // displayedColumns: string[] = ['nombre', 'id','edad'];
-  ngOnInit(): void {
-    this.mascotasService.getMascotas().subscribe(res=>{
-      this.mascota=res;
-    },
-     err => console.log(err)
-    );
+
+    ngOnInit(): void {
+      this.mascotasService.getMascotas().subscribe(res=>{
+        this.mascota=res;
+      },
+      err => console.log(err)
+      );
       
     }
 
-    adoptar(){
+    savePersona(id_animal:number){
+      console.log(id_animal);
+
      
     }
   }

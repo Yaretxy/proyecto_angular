@@ -1,6 +1,6 @@
 export interface Mascotas{
     
-  id:number;
+  id_animal:number;
   nombre:string;
   edad:string;
   raza:string;

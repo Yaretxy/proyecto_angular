@@ -1,0 +1,17 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  background: #ecf0f3;
+  border-radius: 2.5rem;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  min-width: 300px;
+  background-color: #ecf0f3;
+  margin: auto;
+  padding: 3rem 4rem;
+
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}

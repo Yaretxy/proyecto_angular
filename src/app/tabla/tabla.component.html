@@ -1,0 +1,40 @@
+<mat-table [dataSource]="dataSource" mat-sort>
+  <ng-container matColumnDef="Action">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let element, let animales">
+      <button class="btn btn-danger" [class.selected]="animales === selectedMascotas" mat-menu-item (click)="deleteAnimal(animales.id_animal)">Eliminar</button>
+      
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre de mascotas</mat-header-cell>
+    <mat-cell *matCellDef="let animales">{{animales.nombre}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="edad">
+    <mat-header-cell *matHeaderCellDef>Edad</mat-header-cell>
+    <mat-cell *matCellDef="let animales"> {{animales.edad}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="sexo">
+    <mat-header-cell *matHeaderCellDef>Sexo</mat-header-cell>
+    <mat-cell *matCellDef="let animales"> {{animales.sexo}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="raza">
+    <mat-header-cell *matHeaderCellDef>raza</mat-header-cell>
+    <mat-cell *matCellDef="let animales"> {{animales.raza}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <mat-header-cell *matHeaderCellDef>color</mat-header-cell>
+    <mat-cell *matCellDef="let animales"> {{animales.color}} </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row class="mat-table-header" *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
